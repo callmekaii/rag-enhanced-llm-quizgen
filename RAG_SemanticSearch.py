@@ -22,11 +22,13 @@ chunks = process_pdf(path_to_pdf)
 scored_chunks = score_chunks()
 sorted_top_chunks = get_top_chunks(scored_chunks)
 
-for i in range(len(sorted_top_chunks)):
-    chunk_tuple = sorted_top_chunks[i]
-    chunk = chunk_tuple[0]
-    score = chunk_tuple[1]
-    print(f"Chunk {i+1} (Score: {score}):\n{chunk}\n")
+#Debug function to print top chunks with scores
+def debug_print_top_chunks(sorted_top_chunks):
+    for i in range(len(sorted_top_chunks)):
+        chunk_tuple = sorted_top_chunks[i]
+        chunk = chunk_tuple[0]
+        score = chunk_tuple[1]
+        print(f"Chunk {i+1} (Score: {score}):\n{chunk}\n")
 
 
 #Main function to get the best chunk
